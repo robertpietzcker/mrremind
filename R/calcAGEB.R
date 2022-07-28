@@ -14,6 +14,9 @@
 calcAGEB <- function() {
   ageb <- readSource("AGEB")
 
+# add random comment
+
+
   mapping <- toolGetMapping("Mapping_AGEB_REMIND.csv", type = "reportingVariables") %>%
     mutate(!!sym("conversion") := as.numeric(!!sym("Factor")) * !!sym("Weight")) %>%
     select("variable" = "AGEB_variable", "REMIND_variable", "conversion", "unit" = "Unit_AGEB", "Unit_REMIND") %>%
